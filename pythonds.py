@@ -1,3 +1,5 @@
+import time
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -33,3 +35,12 @@ class Queue:
 
     def size(self):
         return len(self.items)
+
+class TowerOfHanoi:
+
+    def towerOfHanoi(self, numberofdisks, startPeg=1, endPeg=3):
+        time.sleep(0.70)
+        if numberofdisks:
+            self.towerOfHanoi(numberofdisks - 1, startPeg, 6-startPeg-endPeg)
+            print("move disk %d from peg %d to peg %d"%(numberofdisks, startPeg, endPeg))
+            self.towerOfHanoi(numberofdisks - 1, 6-startPeg-endPeg, endPeg)
